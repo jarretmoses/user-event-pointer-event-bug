@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ComponentWithParent } from './components';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ComponentWithParent onClick={(e) => {
+      console.log(getComputedStyle(e.target).pointerEvents !== 'none')
+    }
+    } />
   </React.StrictMode>,
   document.getElementById('root')
 );
